@@ -4,14 +4,32 @@ This repository contains the Capstone Client Management API using Spring Boot.
 
 The REST API has CRUD endpoints which interacts with an H2 database. 
 
-###  Starting Our API
+###  Starting the API ###
+
 We can do this using the spring-boot-maven-plugin:
 
-mvn spring-boot:run
+`mvn spring-boot:run`
 
 Or  by running the `com.bkss.CapstoneClientManagementApp` via the IDE
 
-You will be able to get the existing client listing using rest client e.g. postman:
+###  Executing the API endpoints ###
 
-http://localhost:8080/clients.
+You will be able to get all the existing client listing using rest client e.g. postman, using the HTTP GET
 
+http://localhost:8080/clients
+
+To get a specific client use the HTTP `GET`
+
+http://localhost:8080/clients/{id}
+
+The `Update` Client can be executed using the HTTP `PUT`
+
+http://localhost:8080/clients/{id}
+
+The `Delete` Client can be executed using the HTTP `DELETE`
+
+http://localhost:8080/clients/{id}
+
+The `Create` Client can be executed using the HTTP `POST`
+
+http://localhost:8080/clients
