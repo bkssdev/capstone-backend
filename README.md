@@ -22,14 +22,14 @@ To get a specific client use the HTTP `GET`
 
 http://localhost:8080/clients/{id}
 
-The `Update` Client can be executed using the HTTP `PUT`
+The `Update` Client can be executed using the HTTP `PUT` and client json payload
 
 http://localhost:8080/clients/{id}
 
-The `Delete` Client can be executed using the HTTP `DELETE`
+The `Delete` Client can be executed using the HTTP `DELETE`, using the client id param
 
 http://localhost:8080/clients/{id}
 
-The `Create` Client can be executed using the HTTP `POST`
+The `Create` Client can be executed using the HTTP `POST` and client json payload
 
 http://localhost:8080/clients

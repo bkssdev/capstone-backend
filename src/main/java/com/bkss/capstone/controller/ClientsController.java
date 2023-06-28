@@ -30,13 +30,13 @@ public class ClientsController {
     }
 
     @PostMapping
-    public ResponseEntity createClient(@RequestBody Client client) throws URISyntaxException {
+    public ResponseEntity<Client> createClient(@RequestBody Client client) throws URISyntaxException {
         Client savedClient = clientRepository.save(client);
         return ResponseEntity.created(new URI("/clients/" + savedClient.getId())).body(savedClient);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity updateClient(@PathVariable Long id, @RequestBody Client client) {
+    public ResponseEntity<Client> updateClient(@PathVariable Long id, @RequestBody Client client) {
         Client currentClient = clientRepository.findById(id).orElseThrow(RuntimeException::new);
         currentClient.setName(client.getName());
         currentClient.setEmail(client.getEmail());
@@ -46,7 +46,7 @@ public class ClientsController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteClient(@PathVariable Long id) {
+    public ResponseEntity<Client> deleteClient(@PathVariable Long id) {
         clientRepository.deleteById(id);
         return ResponseEntity.ok().build();
     }
